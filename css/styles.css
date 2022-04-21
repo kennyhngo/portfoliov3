@@ -11434,9 +11434,9 @@ section.resume-section .resume-section-content {
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: minmax(100px, auto);
 }
 
 .grid-container ul {
@@ -11491,5 +11491,22 @@ section.resume-section .resume-section-content {
 		list-style: solid;
 		list-style-type: disc;
 		margin-left: 2rem;
+	}
+
+	#typed-strings {
+		display: flex;
+		align-items: center;
+	}
+
+	#typed-strings span {
+		font-size: 3rem;
+		display: flex;
+		text-align: center;
+	}
+
+	.grid-header-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: minmax(100px, auto);
 	}
 }
