@@ -27,6 +27,7 @@ bundle.js
 
 # macOS system files
 *.DS_Store
+**/.DS_Store
 
 Google Drive and Dropbox
 Icon
