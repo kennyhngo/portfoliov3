@@ -1,3 +1,7 @@
+// import Typed from 'typed.js';
+// const Typed = require('Typed.js');
+
+
 /*!
  * Start Bootstrap - Resume v7.0.5 (https://startbootstrap.com/theme/resume)
  * Copyright 2013-2022 Start Bootstrap

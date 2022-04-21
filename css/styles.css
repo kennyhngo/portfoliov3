@@ -7728,6 +7728,18 @@ textarea.form-control-lg {
   color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-tertiary {
+    --bs-text-opacity: 1;
+    color: #dd6622 !important;
+    /* color: #f46036; */
+    /* color: #d7263d; */
+}
+
+.text-quaternary {
+    --bs-text-opacity: 1;
+    color: #ffeeff;
+}
+
 .text-success {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
@@ -11421,11 +11433,49 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.grid-container ul {
+	margin-left: .25rem;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.grid-container .one {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.grid-container .two {
+	grid-column: 2;
+	grid-row: 1;	
+}
+
+.grid-container .three {
+	grid-column: 3;
+	grid-row: 1;
+	margin-right: .5rem;
+}
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
   }
+	.grid-container {
+		gap: 10px;
+		padding-right: .5rem;
+	}
+	.grid-container ul {
+		list-style: solid;
+		list-style-type: disc;
+		margin-left: 3rem;
+	}
 }
+
 @media (min-width: 992px) {
   section.resume-section {
     padding-left: 3rem;
@@ -11433,4 +11483,13 @@ section.resume-section .resume-section-content {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+	.grid-container {
+		gap: 10px;
+		padding-right: .5rem;
+	}
+	.grid-container ul {
+		list-style: solid;
+		list-style-type: disc;
+		margin-left: 2rem;
+	}
 }
