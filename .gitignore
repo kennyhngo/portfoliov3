@@ -10,7 +10,6 @@ venv3/
 .pytest_cache
 
 # JavaScript
-bundle.js
 *node_modules*
 */var/*
 
