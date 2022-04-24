@@ -11437,6 +11437,17 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
+#typed-strings {
+    display: flex;
+    align-items: center;
+}
+
+#typed-strings span {
+    font-size: 2rem;
+    display: flex;
+    text-align: center;
+}
+
 .grid-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
