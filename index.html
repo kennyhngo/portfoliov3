@@ -33,9 +33,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li> -->
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li> -->
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
                     <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li> -->
                 </ul>
@@ -73,23 +74,15 @@
                         <a class="social-icon" href="https://github.com/kennyhngo/" target="_blank"><i class="fab fa-github"></i></a>
                         <!-- <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a> -->
                         <!-- <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a> -->
+                        <a class="social-icon" href="assets/files/KennyNgo-Resume.pdf" download><i class="fa-regular fa-file-lines"></i></a>
                     </div>
                 </div>
             </section>
             <hr class="m-0" />
             <!-- Experience-->
-            <section class="resume-section" id="experience">
+            <!-- <section class="resume-section" id="experience">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Senior Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
-                    </div>
-
+                    <h2 class="mb-0">Experience</h2>
                     <div class="experience-container" id="expapp">
                         <div class="timeline">
                             <ul>
@@ -106,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <hr class="m-0" />
             <!-- Education-->
             <section class="resume-section" id="education">
@@ -120,15 +113,28 @@
                             <div>Computer Science - Full Stack Developer Track</div>
                             <div>Data Science</div>
                             <p>GPA: 3.23</p>
-                            <div class="grid-container" id="eduapp">
-                                <div v-for="major in majors">
-                                    <p>{{ major.name }} Courses:</p>
-                                    <ul class="fa-ul mb-0 one">
-                                        <li style="padding-bottom: .5rem" v-for="course in major.courses">
-                                            <span class="text-tertiary">{{ course.title }}: </span>
-                                            <span>{{ course.name }}</span>
-                                        </li>
-                                    </ul>
+                            <div id="eduapp">
+                                <div class="grid-container">
+                                    <div v-for="major in majors">
+                                        <p>{{ major.name }} Courses:</p>
+                                        <ul class="fa-ul mb-0 one">
+                                            <li style="padding-bottom: .5rem" v-for="course in major.courses">
+                                                <span class="text-tertiary">{{ course.title }}: </span>
+                                                <span>{{ course.name }}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p>Future Courses:</p>
+                                <div class="grid-container">
+                                    <div v-for="major in majors">
+                                        <ul class="fa-ul mb-0 one">
+                                            <li style="padding-bottom: .5rem" v-for="course in major.future">
+                                                <span class="text-tertiary">{{ course.title }}: </span>
+                                                <span>{{ course.name }}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -144,24 +150,68 @@
                 </div>
             </section>
             <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
+            <!-- Projects -->
+            <section class="resume-section" id="projects">
                 <div class="resume-section-content">
+                    <div class="mb-5" id="projapp">
+                        <h2 class="mb-5">Projects</h2>
+                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5" v-for="proj in projects">
+                            <div class="flex-grow-1">
+                                <h3 class="mb-0">{{ proj.title }}</h3>
+                                <div class="subheading mb-4">{{ proj.subtitle }}</div>
+                                <p class="mb-3">{{ proj.summary }}</p>
+                            </div>
+                            <div class="flex-shrink-0"><span class="text-primary">{{ proj.date }}</span></div>
+                        </div>
+                    </div>
+                    <div id="skillapp" style="padding-top: 2.5rem;">
+                        <h3 class="mb-5" style="font-size: 3rem; font-weight: normal;">Programming Languages & Tools</h3>
+                        <!-- <div class="subheading mb-3">Programming Languages & Tools</div> -->
+                        <ul class="list-inline dev-icons">
+                            <li class="list-inline-item tooltip-custom" v-for="lang in languages"><i class="fab" :class="lang.name"></i>
+                                <span>{{ lang.optionalInner }}</span>
+                                <span class="tooltiptext-custom">{{ lang.caption }}</span>
+                            </li>
+                            <li class="list-inline-item tooltip-custom"><i class="fa-solid fa-database"></i>
+                                <span class="tooltiptext-custom">SQL</span>
+                            </li>
+                        </ul>
+                        <!-- <div class="subheading mb-3">Workflow</div>
+                        <ul class="fa-ul mb-0">
+                            <li >
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Mobile-First, Responsive Design
+                            </li>
+                            <li>
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Cross Browser Testing & Debugging
+                            </li>
+                            <li>
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Cross Functional Teams
+                            </li>
+                            <li>
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                Agile Development & Scrum
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+            </section>
+            <!-- <hr class="m-0" /> -->
+            <!-- Skills-->
+            <!-- <section class="resume-section" id="skills">
+                <div class="resume-section-content" id="skillapp">
                     <h2 class="mb-5">Skills</h2>
                     <div class="subheading mb-3">Programming Languages & Tools</div>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-angular"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-sass"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-less"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-npm"></i></li>
+                        <li class="list-inline-item tooltip-custom" v-for="lang in languages"><i class="fab" :class="lang.name"></i>
+                            <span>{{ lang.optionalInner }}</span>
+                            <span class="tooltiptext-custom">{{ lang.caption }}</span>
+                        </li>
+                        <li class="list-inline-item tooltip-custom"><i class="fa-solid fa-database"></i>
+                            <span class="tooltiptext-custom">SQL</span>
+                        </li>
                     </ul>
                     <div class="subheading mb-3">Workflow</div>
                     <ul class="fa-ul mb-0">
@@ -183,17 +233,19 @@
                         </li>
                     </ul>
                 </div>
-            </section>
+            </section> -->
             <hr class="m-0" />
             <!-- Interests-->
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Interests</h2>
-                    <p>Besides being a full-time student, </p>
+                    <p class="mb-5">Besides being a full-time student and coding, I enjoy skateboarding, reading <a href="https://www.webtoons.com/en/">Webtoons,</a> atching TV shows, and spending time with my friends. I have been skating for a few months now and I am still trying to learn how to <a href="https://youtu.be/851cTIcNuDU?t=16">ollie.</a> Currently, my favorite two Webtoons are Lookism and Viral Hit, both written by the same author! I am currently watching <a href="https://www.imdb.com/title/tt3032476/">Better Call Saul</a> and it is fantastic. During the school year, I usually spend time with my friends by studying or doing homework with their presence and sometimes, grab food.</p>
 
-                    <p class="mb-0">Going off on a small tangent - Aristotle argued that the ultimate goal of existence is achieving happines. Sometimes in my free time, I tune into <a href="https://www.garyvaynerchuk.com/">Gary Vaynerchuk's</a> <a href="https://www.instagram.com/garyvee/?hl=en">Instagram videos and reels</a> and he reiterates and believes that doing </p>
-                    <!-- <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p> -->
+                    <p class="mb-4">Ultimately, I love helping other people out. Specifically, I like to share my knowledge, if I can. My two biggest strengths lie in programming and mathematics. For the most part, math is challenging and every teacher wants things done their way, so helping others in math is tricky. On the other hand, coding is very consistent. Seeing people's faces light up when their code compiles and executes correctly with a little guidance gives me a giant dopamine boost and sense of purpose.</p>
+
+                    <p class="mb-4">Nowadays, young people learn to code through their school in some curriculum. They learn key concepts and apply them with projects that their teacher creates and assigns to them. However, not everyone has the luxury of growing up in a school with computers, or have stable Internet access at home. Or maybe they haven't picked up an interest in coding until later in life - when they are out of school and going to college just isn't viable.</p>
+
+                    <p class="mb-0">So I am currently working on a life-long project where a devise and assign projects in a progessive manner. People will be able to self-teach themselves and learn the fundamentals of programming without the need to spend a significant amount of money for college. How they learn the material is still fuzzy, but in the grand scheme of the project, they will be able to learn everything for free!</p>
                 </div>
             </section>
             <hr class="m-0" />
@@ -213,6 +265,7 @@
                 </div>
             </section> -->
         </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -239,6 +292,8 @@
         </script>
         <!-- Vue JS -->
         <script>
+            const ndash = "\u2013";  // HTML equivalent of &ndash;
+
             Vue.createApp({
                 data() {
                     return {
@@ -248,17 +303,22 @@
                             { title: 'EECS 370', name: 'Computer Organization' },
                             { title: 'EECS 376', name: 'Foundations of Computer Science' },
                             { title: 'EECS 485', name: 'Web Systems' },
-                            { title: 'EECS 493', name: 'User Interface Development' }]},
+                            { title: 'EECS 493', name: 'User Interface Development' }],
+                            future: [{ title: 'EECS 441', name: 'Mobile App Development' },
+                                { title: 'EECS 481', name: 'Software Engineering' }]},
                         { name: 'Data Science', courses: [{ title: 'STATS 412', name: 'Probability and Statistics' },
                             { title: 'STATS 413', name: 'Applied Regression Analysis' },
                             { title: 'STATS 426', name: 'Theoretical Statistics' },
-                            { title: 'EECS 445', name: 'Machine Learning' }]},
+                            { title: 'EECS 445', name: 'Machine Learning' }],
+                            future: [{ title: 'STATS 485', name: 'Statistical Capstone Seminar' }]},
                         { name: 'Mathematics', courses: [{ title: 'MATH 215', name: 'Multivariable Calculus' },
                             { title: 'MATH 217', name: 'Linear Algebra' },
                             { title: 'MATH 312', name: 'Modern Algebra' },
                             { title: 'MATH 316', name: 'Differential Equations' },
                             { title: 'MATH 425', name: 'Introduction to Probability' },
-                            { title: 'MATH 463', name: 'Math Modeling in Biology' }]}]
+                            { title: 'MATH 463', name: 'Math Modeling in Biology' }],
+                            future: [{ title: 'MATH 351', name: 'Principles of Analysis' },
+                                { title: 'MATH 471', name: 'Numerical Methods' }]}]
                     }
                 }
             }).mount('#eduapp');
@@ -266,18 +326,60 @@
             Vue.createApp({
                 data() {
                     return {
-                        experiences: [ { date: 'September 2019 – Present', title: 'Tutor', description: [{ 'ptr': 'a'}, {'ptr': 'b'}] },
-                            { date: 'October 2020 – February 2022', title: 'Dining Service Worker', description: [{ 'ptr': 'a'}, {'ptr': 'b'}] },
-                            { date: 'May 2020 – July 2020', title: 'Amazon', description: [{ 'ptr': 'a'}, {'ptr': 'b'}] },
-                            { date: 'June 2019 – August 2019', title: 'Machine Operator', description: [{ 'ptr': 'a' }, { 'ptr': 'b' }] }
-                            //{ date: '22nd may, 2010', title: 'job 2', description: 'second day' },
-                            //{ date: '23rd may, 2010', title: 'job 3', description: 'third day' },
-                            //{ date: '24th may, 2010', title: 'job 4', description: 'fourth day' },
-                            //{ date: '25th may, 2010', title: 'job 5', description: 'fifth day' }]
+                        projects: [
+                            { title: 'Search Engine', subtitle: `EECS 485 ${ndash} Class Project`, date: `March 28 ${ndash} April 17, 2022`,
+                                summary: 'A scalable search engine that utilizes PageRank and tf-idf scores to display the most relevant webpages with parallel data processing with MapReduce in the backend and wrap documents within a server REST API service.' },
+                            { title: 'Facebook Clone', subtitle: 'Personal Side Project', date: `February ${ndash} March 2022`,
+                                summary: 'The Instagram clone spin-off with more features, the most notable being a better UI/UX design, friend request system, and a real-time chat messaging system.' },
+                            { title: 'MapReduce Engine', subtitle: `EECS 485 ${ndash} Class Project`, date: `March 7 ${ndash} March 27, 2022`,
+                                summary: 'Simplified Hadoop-like MapReduce local server that can run map-reduce operations over large input files. Using a distributed file system and fault tolerance to catch node failure, it can perform custom map and reduce tasks quickly without additional space.' },
+                            { title: 'Instagram Clone', subtitle: `EECS 485 ${ndash} Class Project`, date: `January 9 ${ndash} February 20, 2022`,
+                                summary: 'Class project to introduce its students to web development with a natural progression from static pages to server and client side dynamic pages using Flask Python and JavaScript using the React framework, and database management using SQL.' },
+                            { title: 'Discord Bot', subtitle: 'Personal Side Project', date: `December ${ndash} January 2022`,
+                                summary: 'Personal bot as a media player and webscraping. Many bots lock some music player features behind a playwall, like shuffling and adding playlist to the queue. I wanted to use those features so I made my own music bot. The bot also fetches data based on user input from a particular website and parses the HTML body and reformats the information into something readable. Specifically, it finds the best runes for some query character name for the game League of Legends.' },
+                            { title: 'Timing Attack Password Attack (Demo Only)', subtitle: 'Personal Side Project', date: 'December, 2021',
+                                summary: 'Simulated a timing attack on an unsecured username/password database to crack passwords efficiently. This program aims to only demonstrate the importance of encryption, multi-leveled authentication, and limited login attempts.' }
+                        ]
+                    }
+                }
+            }).mount('#projapp');
+
+            Vue.createApp({
+                data() {
+                    return {
+                        languages: [
+                            { name: 'fa-html5', caption: 'HTML5' },
+                            { name: 'fa-css3-alt', caption: 'CSS3' },
+                            { name: 'fa-js-square', caption: 'JavaScript' },
+                            { name: 'fa-sass', caption: 'SASS' },
+                            { name: 'fa-react', caption: 'React' },
+                            { name: 'fa-vuejs', caption: 'Vue' },
+                            { name: 'fa-python', caption: 'Python' },
+                            { name: 'fa-cuttlefish', optionalInner: '++', caption: 'C++' },
+                            { name: 'fa-java', caption: 'Java' },
+                            { name: 'fa-r-project', caption: 'R' },
+                            { name: 'fa-git-alt', caption: 'Git' },
+                            { name: 'fa-npm', caption: 'NPM' },
+                        ]
+                    }
+                }
+            }).mount('#skillapp');
+
+            /*
+            Vue.createApp({
+                data() {
+                    return {
+                        experiences: [ { date: `September 2019 ${ndash} Present`, title: 'Tutor', description: [{ 'ptr': 'a'}, {'ptr': 'b'}] },
+                            { date: `October 2020 ${ndash} February 2022`, title: 'Dining Service Worker', description: [{ 'ptr': 'a'}, {'ptr': 'b'}] },
+
+                            { date: `May 2020 ${ndash} July 2020`, title: 'Amazon', description: [{ 'ptr': 'dentify items in large container bin and picking out correct number of items to scan to send to packer.'}, {'ptr': 'dentify items in large container bin and picking out correct number of items to scan to send to packer.'}, { 'ptr': 'Recommend and recruit jobless people to apply and get accepted at an Amazon facility.' }] },
+
+                            { date: `June 2019 ${ndash} August 2019`, title: 'Machine Operator', description: [{ 'ptr': 'Operate on a piece dismantling machine, processing quality car parts while detecting defected parts and scraping flawed pieces to the scrap box, and frequently dispose leftover pieces at workstation for recycling' }, { 'ptr': 'Clean work floor during and at the of shift by emptying out trash bins, collecting paperwork, sweeping the main floor, organizing empty cardboard boxes, totes, and bins, and reporting all misplaced items to quality inspector' }] }
                         ]
                     }
                 }
             }).mount('#expapp');
+            */
         </script>
     </body>
 </html>

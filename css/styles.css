@@ -2720,6 +2720,10 @@ textarea.form-control-lg {
 .form-floating > .form-control:not(:-moz-placeholder-shown) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  -webkit-transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  -moz-transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  -ms-transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  -o-transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 .form-floating > .form-control:not(:-ms-input-placeholder) ~ label {
   opacity: 0.65;
@@ -11610,6 +11614,35 @@ section.resume-section .resume-section-content {
   .timeline ul li:hover::before {
     background-color: aqua;
   }
+}
+
+.tooltip-custom {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip-custom .tooltiptext-custom {
+  visibility: hidden;
+  width: 80px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 1rem;
+  font-weight: normal;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -30px;
+}
+
+.tooltip-custom:hover .tooltiptext-custom {
+  visibility: visible;
 }
 
 
