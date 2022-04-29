@@ -160,6 +160,7 @@
                                 <h3 class="mb-0">{{ proj.title }}</h3>
                                 <div class="subheading mb-4">{{ proj.subtitle }}</div>
                                 <p class="mb-3">{{ proj.summary }}</p>
+                                <p class="mb-3" v-if="proj.link">Deployment Link: <a href="https://kennyhngo.github.io/game-of-life/" target="_blank">https://kennyhngo.github.io/game-of-life/</a></p>
                             </div>
                             <div class="flex-shrink-0"><span class="text-primary">{{ proj.date }}</span></div>
                         </div>
@@ -176,64 +177,9 @@
                                 <span class="tooltiptext-custom">SQL</span>
                             </li>
                         </ul>
-                        <!-- <div class="subheading mb-3">Workflow</div>
-                        <ul class="fa-ul mb-0">
-                            <li >
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Mobile-First, Responsive Design
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Cross Browser Testing & Debugging
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Cross Functional Teams
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                Agile Development & Scrum
-                            </li>
-                        </ul> -->
                     </div>
                 </div>
             </section>
-            <!-- <hr class="m-0" /> -->
-            <!-- Skills-->
-            <!-- <section class="resume-section" id="skills">
-                <div class="resume-section-content" id="skillapp">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item tooltip-custom" v-for="lang in languages"><i class="fab" :class="lang.name"></i>
-                            <span>{{ lang.optionalInner }}</span>
-                            <span class="tooltiptext-custom">{{ lang.caption }}</span>
-                        </li>
-                        <li class="list-inline-item tooltip-custom"><i class="fa-solid fa-database"></i>
-                            <span class="tooltiptext-custom">SQL</span>
-                        </li>
-                    </ul>
-                    <div class="subheading mb-3">Workflow</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Mobile-First, Responsive Design
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Browser Testing & Debugging
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Functional Teams
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Agile Development & Scrum
-                        </li>
-                    </ul>
-                </div>
-            </section> -->
             <hr class="m-0" />
             <!-- Interests-->
             <section class="resume-section" id="interests">
@@ -327,6 +273,9 @@
                 data() {
                     return {
                         projects: [
+                            { title: 'Game of Life', subtitle: 'Personal Side Project', date: 'April 2022',
+                                summary: 'Cellular simulation of John Conway\'s Game of Life, a zero player game determined by its initial state, and introduction to React Hooks in the backend.',
+                                link: 'https://kennyhngo.github.io/game-of-life/' },
                             { title: 'Search Engine', subtitle: `EECS 485 ${ndash} Class Project`, date: `March 28 ${ndash} April 17, 2022`,
                                 summary: 'A scalable search engine that utilizes PageRank and tf-idf scores to display the most relevant web pages with parallel data processing with MapReduce in the backend and wrap documents within a server REST API service.' },
                             { title: 'Facebook Clone', subtitle: 'Personal Side Project', date: `February ${ndash} March 2022`,
