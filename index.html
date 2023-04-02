@@ -73,14 +73,15 @@
                         <span id="static">I am a </span>
                         <span class="text-primary" id="typed"></span>
                     </div> -->
-                <p class="lead mb-5">I am a first generation student at the University of Michigan currently pursuing
-                    degrees in Mathematics, Computer Science, and Data Science. I am interested in using data science to
-                    do data engineering and incorporate software engineering to build and
-                    develop programs.</p>
+                <p class="lead mb-5">
+                    I am a first generation 4th year student at the University of Michigan currently majoring in
+                    Applied Mathematics, Computer Science, and Data Science.
+                    I am interested in expanding my software and programming knowledge to eventually make coding
+                    accessible to everyone.</p>
                 <div class="social-icons">
-                    <a class="social-icon" href="https://www.linkedin.com/in/khngo/" target="_blank"><i
+                    <a class="social-icon" href="https://www.linkedin.com/in/khngo/" target="_blank" rel="noreferrer"><i
                             class="fab fa-linkedin-in"></i></a>
-                    <a class="social-icon" href="https://github.com/kennyhngo/" target="_blank"><i
+                    <a class="social-icon" href="https://github.com/kennyhngo/" target="_blank" rel="noreferrer"><i
                             class="fab fa-github"></i></a>
                     <!-- <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a> -->
                     <!-- <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a> -->
@@ -121,7 +122,7 @@
                         <h3 class="mb-0">University of Michigan &ndash; Ann Arbor</h3>
                         <div class="subheading mb-3">Bachelor of Science</div>
                         <div>Applied Mathematics - Numerical and Applied Analysis Track</div>
-                        <div>Computer Science - Full Stack Developer Track</div>
+                        <div>Computer Science - Software Engineer Track</div>
                         <div>Data Science</div>
                         <p>GPA: 3.24</p>
                         <div id="eduapp">
@@ -136,17 +137,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- <p>Planned Future Courses:</p>
-                            <div class="grid-container">
-                                <div v-for="major in majors">
-                                    <ul class="fa-ul mb-0 one">
-                                        <li style="padding-bottom: .5rem" v-for="course in major.future">
-                                            <span class="text-tertiary">{{ course.title }}: </span>
-                                            <span>{{ course.name }}</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="flex-shrink-0"><span class="text-primary">August 2019 &ndash; May 2023</span></div>
@@ -171,25 +161,18 @@
                             <h3 class="mb-0">{{ proj.title }}</h3>
                             <div class="subheading mb-4">{{ proj.subtitle }}</div>
                             <p class="mb-3">{{ proj.summary }}</p>
-                            <p class="mb-3" v-if="proj.link">Deployment Link: <a
-                                    href="https://kennyhngo.github.io/game-of-life/"
-                                    target="_blank">https://kennyhngo.github.io/game-of-life/</a></p>
+                            <p class="mb-3" v-if="proj.link">Deployment Link:
+                                <a v-bind:href="proj.link" target="_blank" rel="noreferrer">{{ proj.link }}</a>
+                            </p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">{{ proj.date }}</span></div>
                     </div>
                 </div>
                 <div id="skillapp" style="padding-top: 2.5rem;">
-                    <h3 class="mb-5" style="font-size: 3rem; font-weight: normal;">Programming Languages & Tools</h3>
+                    <h3 class="mb-2" style="font-size: 3rem; font-weight: normal;">Programming Languages & Tools</h3>
                     <!-- <div class="subheading mb-3">Programming Languages & Tools</div> -->
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item tooltip-custom" v-for="lang in languages"><i class="fab"
-                                :class="lang.name"></i>
-                            <span>{{ lang.optionalInner }}</span>
-                            <span class="tooltiptext-custom">{{ lang.caption }}</span>
-                        </li>
-                        <li class="list-inline-item tooltip-custom"><i class="fa-solid fa-database"></i>
-                            <span class="tooltiptext-custom">SQL</span>
-                        </li>
+                        <li class="list-inline-item tooltip-custom" v-for="lang in languages"><img :src="lang.src"></li>
                     </ul>
                 </div>
             </div>
@@ -199,7 +182,7 @@
         <section class="resume-section" id="interests">
             <div class="resume-section-content">
                 <h2 class="mb-5">Interests</h2>
-                <p class="mb-5">Besides being a full-time student and coding, I enjoy skateboarding, reading <a
+                <!-- <p class="mb-5">Besides being a full-time student and coding, I enjoy skateboarding, reading <a
                         href="https://www.webtoons.com/en/">Webtoons,</a> watching TV shows, and spending time with my
                     friends. I have been skating for a few months now, and I am still trying to learn how to <a
                         href="https://youtu.be/851cTIcNuDU?t=16">ollie.</a> Currently, my favorite two Webtoons are
@@ -225,7 +208,34 @@
                     progressive manner. People will be able to self-teach themselves and learn the fundamentals of
                     programming without the need to spend a significant amount of money for college. How they learn the
                     material is still fuzzy, but in the grand scheme of the project, they will be able to learn
-                    everything for free!</p>
+                    everything for free!</p> -->
+                <p class="mb-3 indent">
+                    Besides being a full-time student and coding, I enjoy reading
+                    <a href="https://www.webtoons.com/en/" target="_blank" rel="noreferrer">Webtoons</a>,
+                    working out at the gym, and explore new restaurants. During the school year, I spend time with my
+                    friends by studying or doing homework with their presence, and sometimes grab food afterwards. Of
+                    the three, I enjoy going to the gym the most. I indulge in a lot of fitness content on TikTok,
+                    YouTube, and Instagram to try to learn the best and optimal exercises for muscle hypertrophy and
+                    strength. I then share my knowledge with my gym buddies and inform them of good and bad exercises to
+                    do in their routine, and watch and correct their form. In 2022, I have gotten 3 of my friends to
+                    start going to gym consistently.
+                </p>
+
+                <p class="mb-0 indent" id="resources">
+                    My life goal is to be able to make programming accessible to
+                    everyone. More
+                    specifically, my dream is to bring college level education in computer science to everyone. While
+                    there are great free resources online to learn and practice coding, such as
+                    <span v-for="(resource, index) of resources" style="display: inline;">&#8203; <!-- Neccessary -->
+                        <span v-if="index === resources.length - 1">and </span>
+                        <a v-bind:href="resource.url" target="_blank" rel="noreferrer">{{ resource.name }}</a>
+                        <span v-if="index !== resources.length - 1">,&nbsp;</span>
+                        <span v-else>.</span>
+                    </span>
+                    While these are great resources that many experienced programmers would recommend, they lack the
+                    structure and orgnaization of starting from the basics and working up to data structures and
+                    algorithms, as taught in most universities for their introduction to computer science course series. Thus, I have an ambitious goal of creating a self-paced curriculum that will supplement the resources listed above with project development milestone progress checks.
+                </p>
             </div>
         </section>
         <hr class="m-0" />
@@ -254,11 +264,12 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         var typed = new Typed("#typed", {
-            strings: ['computer scientist',
-                'data scientist',
+            strings: [
+                'software engineer',
+                'computer scientist',
                 'applied mathematician',
-                'full stack developer',
-                'software engineer'],
+                'data scientist',
+            ],
             stringsElement: null,
             backSpeed: 40,
             typeSpeed: 40,
@@ -281,6 +292,7 @@
                         {
                             name: 'Computer Science',
                             courses: [
+                                { title: 'EECS 201', name: 'Computer Science Pragmatics' },
                                 { title: 'EECS 203', name: 'Discrete Math' },
                                 { title: 'EECS 281', name: 'Data Structures and Algorithms' },
                                 { title: 'EECS 370', name: 'Computer Organization' },
@@ -291,7 +303,7 @@
                             ],
                         },
                         {
-                            name: 'Data Science', 
+                            name: 'Data Science',
                             courses: [
                                 { title: 'STATS 412', name: 'Probability and Statistics' },
                                 { title: 'STATS 413', name: 'Applied Regression Analysis' },
@@ -302,7 +314,7 @@
                             ],
                         },
                         {
-                            name: 'Mathematics', 
+                            name: 'Mathematics',
                             courses: [
                                 { title: 'MATH 215', name: 'Multivariable Calculus' },
                                 { title: 'MATH 217', name: 'Linear Algebra' },
@@ -323,16 +335,25 @@
                 return {
                     projects: [
                         {
+                            title: 'Rescue the Countess', subtitle: '3D Path Finding', date: `January ${ndash} February 2021 & March 2023`, summary: 'An extension off a 2D path finding algorithm using a BFS approach. It finds the shortest between rooms, where "room teleportation" is allowed, featuring random map generation.', link: 'https://kennyhngo.github.io/countess/'
+                        },
+                        {
+                            title: 'StatTrack', subtitle: 'Capstone Group Project', date: `September 2022 ${ndash} December 2022`,
+                            summary: 'Worked on a team of 7 student developers to create an iOS mobile application that tracks real-time basketball statistics using TensorFlow and LabelImg.'
+                        },
+                        /*
+                        {
                             title: 'Game of Life', subtitle: 'Personal Side Project', date: 'April 2022',
                             summary: 'Cellular simulation of John Conway\'s Game of Life, a zero player game determined by its initial state, and introduction to React Hooks in the backend.',
                             link: 'https://kennyhngo.github.io/game-of-life/'
                         },
+                        */
                         {
                             title: 'Search Engine', subtitle: `EECS 485 ${ndash} Class Project`, date: `March 28 ${ndash} April 17, 2022`,
                             summary: 'A scalable search engine that utilizes PageRank and tf-idf scores to display the most relevant web pages with parallel data processing with MapReduce in the backend and wrap documents within a server REST API service.'
                         },
                         {
-                            title: 'Facebook Clone', subtitle: 'Personal Side Project', date: `February ${ndash} March 2022`,
+                            title: 'Facebook Clone', subtitle: 'Front End Development', date: `February ${ndash} March 2022`,
                             summary: 'The Instagram clone spin-off with more features, the most notable being a better UI/UX design, friend request system, and a real-time chat messaging system.'
                         },
                         {
@@ -344,7 +365,7 @@
                             summary: 'Class project to introduce its students to web development with a natural progression from static pages to server and client side dynamic pages using Flask Python and JavaScript using the React framework, and database management using SQL.'
                         },
                         {
-                            title: 'Discord Bot', subtitle: 'Personal Side Project', date: `December ${ndash} January 2022`,
+                            title: 'Discord Bot (Deprecated)', subtitle: 'Personal Side Project', date: `December ${ndash} January 2022`,
                             summary: 'Personal bot as a media player and web scraping. Many bots lock some music player features behind a paywall, like shuffling and adding playlist to the queue. I wanted to use those features, so I made my own music bot. The bot also fetches data based on user input from a particular website and parses the HTML body and reformat the information into something readable. Specifically, it finds the best runes for some query character name for the game League of Legends.'
                         },
                         {
@@ -360,22 +381,62 @@
             data() {
                 return {
                     languages: [
-                        { name: 'fa-html5', caption: 'HTML5' },
-                        { name: 'fa-css3-alt', caption: 'CSS3' },
-                        { name: 'fa-js-square', caption: 'JavaScript' },
-                        { name: 'fa-sass', caption: 'SASS' },
-                        { name: 'fa-react', caption: 'React' },
-                        { name: 'fa-vuejs', caption: 'Vue' },
-                        { name: 'fa-python', caption: 'Python' },
-                        { name: 'fa-cuttlefish', optionalInner: '++', caption: 'C++' },
-                        { name: 'fa-java', caption: 'Java' },
-                        { name: 'fa-r-project', caption: 'R' },
-                        { name: 'fa-git-alt', caption: 'Git' },
-                        { name: 'fa-npm', caption: 'NPM' },
+                        { src: 'https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white', name: 'Python' },
+                        { src: 'https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white', name: 'C' },
+                        { src: 'https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white', name: 'C++' },
+                        { src: 'https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white', name: 'HTML5' },
+                        { src: 'https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white', name: 'CSS3' },
+                        { src: 'https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E', name: 'JavaScript' },
+                        { src: 'https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white', name: 'TypeScript' },
+                        { src: 'https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white', name: 'SASS' },
+                        { src: 'https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white', name: 'SQLite' },
+                        { src: 'https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB', name: 'React' },
+                        { src: 'https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D', name: 'Vue' },
+                        { src: 'https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white', name: 'Java' },
+                        { src: 'https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white', name: 'R' },
+                        { src: 'https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white', name: 'Git' },
+                        // { name: 'fa-npm', name: 'NPM' },
                     ]
                 };
             }
         }).mount('#skillapp');
+
+        Vue.createApp({
+            data() {
+                return {
+                    resources: [
+                        {
+                            name: 'w3schools',
+                            url: 'https://www.w3schools.com/'
+                        },
+                        {
+                            name: 'FreeCodeCamp',
+                            url: 'https://www.freecodecamp.org/'
+                        },
+                        {
+                            name: 'LeetCode',
+                            url: 'https://leetcode.com/'
+                        },
+                        {
+                            name: 'The Odin Project',
+                            url: 'https://www.theodinproject.com/'
+                        },
+                        {
+                            name: 'Harvard\'s CS50',
+                            url: 'https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0'
+                        },
+                        {
+                            name: 'CodeWars',
+                            url: 'https://www.codewars.com/'
+                        },
+                        {
+                            name: 'Full Stack Open',
+                            url: 'https://fullstackopen.com/en/'
+                        }
+                    ]
+                };
+            }
+        }).mount('#resources');
 
         /*
         Vue.createApp({

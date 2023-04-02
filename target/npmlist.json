@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+    "name": "portfoliov3",
+    "dependencies": {
+        "typed.js": {
+            "version": "2.0.12"
+        }
+    }
+}
