@@ -40,12 +40,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li> -->
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-                <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li> -->
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li> -->
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
             </ul>
         </div>
     </nav>
@@ -66,14 +66,9 @@
                         </div>
                     </div>
                     <div class="mb-3" id="typed-strings">
-                        <!-- <span id="static">I am a </span> -->
                         <span class="text-primary" id="typed"></span>
                     </div>
                 </div>
-                <!-- <div class="mb-3" id="typed-strings">
-                        <span id="static">I am a </span>
-                        <span class="text-primary" id="typed"></span>
-                    </div> -->
                 <p class="lead mb-5">
                     I am a first generation and a recent graduate from University of Michigan with majors in
                     Computer Science, Data Science, and Applied Mathematics. My life goal is to always keep
@@ -86,33 +81,28 @@
                             class="fab fa-github"></i></a>
                     <!-- <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a> -->
                     <!-- <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a> -->
-                    <a class="social-icon" href="assets/files/KennyNgo_Resume.pdf" download><i
+                    <a class="social-icon" href="assets/files/Kenny_Ngo_Resume.pdf" download><i
                             class="fa-regular fa-file-lines"></i></a>
                 </div>
             </div>
         </section>
         <hr class="m-0" />
         <!-- Experience-->
-        <!-- <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-0">Experience</h2>
-                    <div class="experience-container" id="expapp">
-                        <div class="timeline">
-                            <ul>
-                                <li v-for="exp in experiences">
-                                    <div class="timeline-content">
-                                        <h3 class="date">{{ exp.date }}</h3>
-                                        <h1>{{ exp.title }} <span style="float: right; margin-right: 10%">{{ exp.location }}</span></h1>
-                                        <span v-for="desc in exp.description">
-                                            <p>&#x2022; &nbsp; {{ desc.ptr }}</p>
-                                        </span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+        <section class="resume-section" id="experience">
+            <div class="resume-section-content" id="expapp">
+                <h2 class="mb-5">Experience</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between"
+                    v-for="(exp, index) in experiences"
+                    v-bind:class="{ 'mb-5': index !== experiences.length - 1 }">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">{{ exp.title }}</h3>
+                        <div class="subheading mb-3">{{ exp.company }}</div>
+                        <p>{{ exp.description }}</p>
                     </div>
+                    <div class="flex-shrink-0"><span class="text-primary">{{ exp.date }}</span></div>
                 </div>
-            </section> -->
+            </div>
+        </section>
         <hr class="m-0" />
         <!-- Education-->
         <section class="resume-section" id="education">
@@ -142,13 +132,6 @@
                     </div>
                     <div class="flex-shrink-0"><span class="text-primary">August 2019 &ndash; May 2023</span></div>
                 </div>
-                <!-- <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">East Kentwood High School</h3>
-                            <p>GPA: 4.27</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2015 - May 2019</span></div>
-                    </div> -->
             </div>
         </section>
         <hr class="m-0" />
@@ -170,15 +153,29 @@
                         <div class="flex-shrink-0"><span class="text-primary">{{ proj.date }}</span></div>
                     </div>
                 </div>
-                <div id="skillapp" style="padding-top: 2.5rem;">
-                    <h3 class="mb-2" style="font-size: 3rem; font-weight: normal;">Programming Languages & Tools
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Skills-->
+        <section class="resume-section" id="skills">
+            <div class="resume-section-content">
+                <h2 class="mb-4">Skills</h2>
+                <div id="skillapp">
+                    <h3 class="mb-2 fw-normal fs-3">Programming
+                        Languages & Tools
                     </h3>
-                    <!-- <div class="subheading mb-3">Programming Languages & Tools</div> -->
                     <ul class="list-inline dev-icons">
                         <li class="list-inline-item tooltip-custom" v-for="lang in languages"><img :src="lang.src">
                         </li>
                     </ul>
                 </div>
+                <h3 class="subheading mb-3 fw-normal fs-3">Workflow</h3>
+                <ul class="fa-ul mb-0" id="workflowapp">
+                    <li v-for="work in workflow">
+                        <span class="fa-li"><i class="fas fa-check"></i></span>
+                        {{ work.skill }}
+                    </li>
+                </ul>
             </div>
         </section>
         <hr class="m-0" />
@@ -227,20 +224,17 @@
         </section>
         <hr class="m-0" />
         <!-- Awards-->
-        <!-- <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Awards & Certifications</h2>
-                    <ul class="fa-ul mb-0" id="vueapp">
-                        <li v-for="item in items">
-                            {{ item.message }}
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Google Analytics Certified Developer
-                        </li>
-                    </ul>
-                </div>
-            </section> -->
+        <section class="resume-section" id="awards">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Awards & Certifications</h2>
+                <ul class="fa-ul mb-0" id="awardsapp">
+                    <li v-for="award in awards">
+                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                        {{ award.title }}
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <!-- Bootstrap core JS-->
@@ -275,6 +269,21 @@
         Vue.createApp({
             data() {
                 return {
+                    experiences: [
+                        {
+                            title: 'STEM Tutor', company: 'Self Employed/University of Michigan', date: `September 2019 ${ndash} June 2023`, description: 'Tutored an average of six students per semester in introductory computer science, mathematics, and statistics courses, conducting four hours of weekly one-on-one sessions and tailoring lesson plans to individual skill levels, resulting in a 15% increase in students\' average grades. Additionally, provided debugging assistance to three students per term, dedicating two hours each week to identify and resolve coding issues and evaluating and enhancing coding skills, resulting in a 25% reduction in programming errors.Designed and executed structured lesson plans, adapting content to students\' proficiency levels, leading to a 10% improvement in student retention and engagement, while also promoting effective coding practices during tutoring sessions and emphasizing code readability and simplicity. Collaborated with peers in paired programming sessions, collectively reducing total coding time by 20% and increasing code quality.'
+                        },
+                        {
+                            title: 'Freelance Assistant', company: 'Volunteer', date: `January 2023 ${ndash} April 2023`, description: 'Conducted rigorous testing, encompassing unit tests and code analysis with test coverage assessment, to improve software reliability and enhance the user experience across frontend and backend components within a scrum-like environment. Additionally, actively engaged in code review processes, contributing to debugging efforts and risk mitigation through a comprehensive understanding of the codebase.'
+                        }
+                    ]
+                };
+            }
+        }).mount('#expapp');
+
+        Vue.createApp({
+            data() {
+                return {
                     majors: [
                         {
                             name: 'Computer Science',
@@ -282,6 +291,7 @@
                                 { title: 'EECS 183', name: 'Elementary Programming Concepts' },
                                 { title: 'EECS 201', name: 'Computer Science Pragmatics' },
                                 { title: 'EECS 203', name: 'Discrete Math' },
+                                { title: 'EECS 280', name: 'Programming and Intro Data Structures' },
                                 { title: 'EECS 281', name: 'Data Structures and Algorithms' },
                                 { title: 'EECS 370', name: 'Introduction to Computer Organization' },
                                 { title: 'EECS 376', name: 'Foundations of Computer Science' },
@@ -302,7 +312,7 @@
                             ],
                         },
                         {
-                            name: 'Mathematics',
+                            name: 'Applied Mathematics',
                             courses: [
                                 { title: 'PHYSICS 240', name: 'General Physics II - Electricity and Magnetism' },
                                 { title: 'PHYSICS 241', name: 'Elementary Laboratory II' },
@@ -403,6 +413,22 @@
         Vue.createApp({
             data() {
                 return {
+                    workflow: [
+                        { skill: 'Debugging' },
+                        { skill: 'Test Driven Development' },
+                        /*
+                        { skill: 'Cross Browser Testing & Debugging' },
+                        { skill: 'Cross Functional Teams' },
+                        { skill: 'Agile Development & Scrum' }
+                        */
+                    ]
+                };
+            }
+        }).mount('#workflowapp');
+
+        Vue.createApp({
+            data() {
+                return {
                     resources: [
                         {
                             name: 'w3schools',
@@ -437,21 +463,16 @@
             }
         }).mount('#resources');
 
-        /*
         Vue.createApp({
             data() {
                 return {
-                    experiences: [ { date: `September 2019 ${ndash} Present`, title: 'Tutor', description: [{ 'ptr': 'a'}, {'ptr': 'b'}] },
-                        { date: `October 2020 ${ndash} February 2022`, title: 'Dining Service Worker', description: [{ 'ptr': 'a'}, {'ptr': 'b'}] },
-
-                        { date: `May 2020 ${ndash} July 2020`, title: 'Amazon', description: [{ 'ptr': 'dentify items in large container bin and picking out correct number of items to scan to send to packer.'}, {'ptr': 'dentify items in large container bin and picking out correct number of items to scan to send to packer.'}, { 'ptr': 'Recommend and recruit jobless people to apply and get accepted at an Amazon facility.' }] },
-
-                        { date: `June 2019 ${ndash} August 2019`, title: 'Machine Operator', description: [{ 'ptr': 'Operate on a piece dismantling machine, processing quality car parts while detecting defected parts and scraping flawed pieces to the scrap box, and frequently dispose leftover pieces at workstation for recycling' }, { 'ptr': 'Clean work floor during and at the of shift by emptying out trash bins, collecting paperwork, sweeping the main floor, organizing empty cardboard boxes, totes, and bins, and reporting all misplaced items to quality inspector' }] }
+                    awards: [
+                        { title: 'University Honors' }
                     ]
-                }
+                };
             }
-        }).mount('#expapp');
-        */
+        }).mount('#awardsapp')
+
     </script>
 </body>
 
